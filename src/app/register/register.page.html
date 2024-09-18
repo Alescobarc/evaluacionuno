@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title class="custom-title">RegistrAPP</ion-title>
+    <ion-title class="titulo">RegistrAPP</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,14 +13,55 @@
   </div>
 
   <div id="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100px;">
-    <ion-button color="warning">
-      <ion-icon name="person-outline"></ion-icon>
-      Profesor
-    </ion-button>
-    <br><br>
-    <ion-button color="primary" style="margin-top: 10px;">
+    <ion-button color="primary" (click)="openRegisterModal()">
       <ion-icon name="person-add-outline"></ion-icon>
-      Alumno
+      Registrarse como Profesor
+    </ion-button>
+    <ion-modal [isOpen]="isRegisterModalOpen" (didDismiss)="closeRegisterModal()">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Registrarse</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="closeRegisterModal()">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+  
+        <ion-content>
+          <ion-item>
+            <ion-label position="floating">Nombre Completo</ion-label>
+            <ion-input [(ngModel)]="fullName" type="text" placeholder="Ingrese su nombre"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">RUT</ion-label>
+            <ion-input [(ngModel)]="rut" type="text" placeholder="Ingrese su RUT"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input [(ngModel)]="password" type="password" placeholder="Ingrese una contraseña"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Confirmar Contraseña</ion-label>
+            <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Confirme su contraseña"></ion-input>
+          </ion-item>
+  
+          <div style="display: flex; justify-content: center; margin-top: 20px;">
+            <ion-button expand="block" color="primary" (click)="register()">Registrarse</ion-button>
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
+
+  <div id="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50px;">
+    <ion-button color="primary" (click)="openRegisterModal()">
+      <ion-icon name="person-add-outline"></ion-icon>
+      Registrarse como Profesor
     </ion-button>
   </div>
+  
 </ion-content>
