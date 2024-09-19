@@ -24,6 +24,11 @@ export class LoginPage implements OnInit {
     this.isModalOpen = false;
   }
 
+  clearForm() {
+    this.email = '';
+    this.password = '';
+  }
+  
   login() {
     if (this.email && this.password) {
       console.log('Correo:', this.email);

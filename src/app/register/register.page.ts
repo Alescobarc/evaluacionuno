@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterPage implements OnInit {
 
   isRegisterModalOpen = false;
-  fullName: string = '';
+  email: string = '';
   rut: string = '';
   password: string = '';
   confirmPassword: string = '';
@@ -27,12 +27,19 @@ export class RegisterPage implements OnInit {
     this.isRegisterModalOpen = false;
   }
 
+  clearForm() {
+    this.email = '';
+    this.rut = '';
+    this.password = '';
+    this.confirmPassword = '';
+  }
+
   // Función para registrar al usuario
   register() {
-    if (this.fullName && this.rut && this.password && this.confirmPassword) {
+    if (this.email && this.rut && this.password && this.confirmPassword) {
       if (this.password === this.confirmPassword) {
         // Aquí puedes añadir la lógica de registro, como llamar a un servicio
-        console.log('Nombre:', this.fullName);
+        console.log('Correo:', this.email);
         console.log('RUT:', this.rut);
         console.log('Contraseña:', this.password);
         this.closeRegisterModal();

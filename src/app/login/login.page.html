@@ -41,7 +41,9 @@
           </ion-item>
   
           <div style="display: flex; justify-content: center; margin-top: 20px;">
-            <ion-button expand="block" color="warning" (click)="login()">Iniciar Sesión</ion-button>
+            <ion-button expand="block" color="warning" (click)="login()" (click)="clearForm()">
+              <a href="inicio">Iniciar Sesión</a>
+            </ion-button>
           </div>
         </ion-content>
       </ng-template>
