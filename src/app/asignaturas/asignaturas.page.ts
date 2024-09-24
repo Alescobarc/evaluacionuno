@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AsignaturasService } from '../services/asignaturas.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-asignaturas',
@@ -6,19 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./asignaturas.page.scss'],
 })
 export class AsignaturasPage implements OnInit {
-  //listado de Asignaturas
 
   asignaturas=[
 
-    {nombre: 'matematica', seleccionada: false},
-    {nombre: 'educacion fisica', seleccionada: false},
-    {nombre: }
-
+    {nombre: 'CALIDAD DE SOFTWARE (CSY4111)'},
+    {nombre: 'ARQUITECTURA (ASY4131)'},
+    {nombre:'INGLES INTERMEDIO (INI5111)'},
+    {nombre: 'ETICA PARA EL TRABAJO (EAY4450)'},
+    {nombre: 'PROGRAMACION DE APLICACIONES MOVILES (PGY4121)'},
+    {nombre: 'PROCESO DE PORTAFOLIO 4 (APY4461)'}
   ]
 
-  constructor() { }
+  constructor(
+    private asignaturasService: AsignaturasService,
+    private navCtrl: NavController 
+  ){}
+  
+  goToInicio() {
+    this.navCtrl.navigateBack('/inicio')
+  };
 
   ngOnInit() {
   }
+  
+
+
 
 }

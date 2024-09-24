@@ -22,7 +22,6 @@ export class RegisterPage implements OnInit {
     this.isRegisterModalOpen = true;
   }
 
-  // Cerrar el modal de registro
   closeRegisterModal() {
     this.isRegisterModalOpen = false;
   }
@@ -34,11 +33,9 @@ export class RegisterPage implements OnInit {
     this.confirmPassword = '';
   }
 
-  // Función para registrar al usuario
   register() {
     if (this.email && this.rut && this.password && this.confirmPassword) {
       if (this.password === this.confirmPassword) {
-        // Aquí puedes añadir la lógica de registro, como llamar a un servicio
         console.log('Correo:', this.email);
         console.log('RUT:', this.rut);
         console.log('Contraseña:', this.password);

@@ -1,0 +1,21 @@
+ion-content {
+    --background: #ffffff; 
+    padding: 20px;
+    position: relative;
+  }
+  
+  ion-card {
+    margin: 20px 0;
+  }
+  
+  ion-badge {
+    font-size: 14px;
+  }
+  
+  .boton-retorno {
+    position: fixed;
+    bottom: 160px; 
+    left: 10px;  
+    z-index: 100; 
+  }
+  

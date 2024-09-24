@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="person-circle" slot="icon-only" size="large" color="dark"></ion-icon>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header color="warning">
+      <ion-card-title>Información del Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+          <ion-label>Nombre completo:</ion-label>
+          <ion-text slot="end">{{ usuario.nombre }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Rut:</ion-label>
+          <ion-text slot="end">{{ usuario.rut }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>EDAD:</ion-label>
+          <ion-text slot="end">{{ usuario.edad }} años</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Nombre de usuario:</ion-label>
+          <ion-text slot="end">{{ usuario.usuario }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Correo Electrónico:</ion-label>
+          <ion-text slot="end">{{ usuario.email }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Clave de usuario:</ion-label>
+          <ion-text slot="end">{{ usuario.clave }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Carrera:</ion-label>
+          <ion-text slot="end">{{ usuario.carrera }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Teléfono:</ion-label>
+          <ion-text slot="end">{{ usuario.telefono }}</ion-text>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button class="boton-retorno" (click)="goToInicio()" color="danger">Volver a Inicio</ion-button>
+</ion-content>
